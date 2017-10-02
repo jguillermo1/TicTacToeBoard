@@ -19,21 +19,12 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-<<<<<<< HEAD
 	if (turn == X) {
 		turn = O; return O;
 	}
 	else {
 		turn = X; return X;
 	}
-=======
-  if(turn == X){
- turn = O; return O;
-}
- else{
-turn = X; return X;
- }
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
 }
 /**
 * Places the piece of the current turn on the board, returns what
@@ -46,7 +37,6 @@ turn = X; return X;
 **/
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-<<<<<<< HEAD
 	if (row < 0 || row > 2 || column < 0 || column > 2) {
 		return Invalid;
 	}
@@ -61,23 +51,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 	else {
 		return board[row][column];
 	}
-=======
-  if(row < 0 || row > 2 || column < 0 || column > 2){
-    return Invalid;
-  }
-  else if(board[row][column] == Blank){
-    if (turn == X){
-      board[row][column] = X; turn =  O; return O;
-    }
-    else{
-      board[row][column] = O; turn = X; return X;
-    } 
-  }
-  else{ return board[row][column];
-  }
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
 }
-
 /**
 * Returns what piece is at the provided coordinates, or Blank if there
 * are no pieces there, or Invalid if the coordinates are out of bounds
@@ -86,21 +60,12 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 /*There is a bug when passed in a number < 1 or > 3. It should not fail when passed in 0, fail when passed in 3 if working correctly. */
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-<<<<<<< HEAD
-	if (row < 1 || row > 3 || column < 1 || column > 3) {
+	if (row < 0 || row > 2 || column < 0 || column > 2) {
 		return Invalid;
 	}
 	else if (board[row][column] == Blank) return Blank;
 	else if (board[row][column] == X) return X;
 	else { return O; }
-=======
-  if(row < 1 || row > 3 || column < 1 || column > 3){
-    return Invalid;
-  }
-  else if(board[row][column] == Blank) return Blank;
-  else if(board[row][column] == X) return X;
-  else {return O;}
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
 }
 
 /**
@@ -109,7 +74,6 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-<<<<<<< HEAD
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			if (board[i][j] == Blank || board[j][i] == Blank) return Blank;
@@ -126,22 +90,4 @@ Piece TicTacToeBoard::getWinner()
 		return board[2][2];
 	}
 	return Invalid;
-=======
- for(int i = 0; i < 3; i++){
-	for(int j = 0; j < 3; j++){
-		if(board[i][j] == Blank || board[j][i] == Blank) return Blank;
-	}
- } 
-
-  if((board[0][0] && board[0][1] == board[0][2] ) || (board[0][0] == board[1][0] == board[2][0]) || (board[0][0] == board[1][1] == board[2][2])){
-	return board[0][0];
-	}
-  else if((board[0][1] == board[1][1] == board[2][1]) || board[1][0] == board[1][1] == board[1][2]){
-	return board[1][1];
-	}
-  else if(board[2][0]==board[2][1] == board[2][2] || board[0][2] == board[1][2] == board [2][2]){
-	return board[2][2];
-	}
- return Invalid;
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
 }

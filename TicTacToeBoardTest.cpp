@@ -182,7 +182,6 @@ TEST(TicTacToeBoardTest,getWinnerTest)
 TEST(TicTacToeBoardTest,getWinnerDraw)
 {
 	TicTacToeBoard board;
-	
 	board.placePiece(0,2); 
 	board.placePiece(0,0);  
 	board.placePiece(1,0);  
