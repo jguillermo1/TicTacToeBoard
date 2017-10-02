@@ -86,21 +86,12 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 /*There is a bug when passed in a number < 1 or > 3. It should not fail when passed in 0, fail when passed in 3 if working correctly. */
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-<<<<<<< HEAD
-	if (row < 1 || row > 3 || column < 1 || column > 3) {
+	if (row < 0 || row > 2 || column < 0 || column > 2) {
 		return Invalid;
 	}
 	else if (board[row][column] == Blank) return Blank;
 	else if (board[row][column] == X) return X;
 	else { return O; }
-=======
-  if(row < 1 || row > 3 || column < 1 || column > 3){
-    return Invalid;
-  }
-  else if(board[row][column] == Blank) return Blank;
-  else if(board[row][column] == X) return X;
-  else {return O;}
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
 }
 
 /**
