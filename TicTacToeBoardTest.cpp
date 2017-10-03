@@ -68,8 +68,8 @@ TEST(TicTacToeBoardTest,getWinnerTest)
 	board.placePiece(1,0); 
 	board.placePiece(1,2);
 	board.placePiece(2,1);
-	board.placePiece(2,1);
-	EXPECT_EQ(board.getWinner(), Blank);
+	board.placePiece(2,0);
+	EXPECT_EQ(board.getWinner(), X);
 }
 
 TEST(TicTacToeBoardTest,getWinnerDraw)
